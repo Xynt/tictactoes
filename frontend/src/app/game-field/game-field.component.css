@@ -1,0 +1,47 @@
+.playing-field {
+  position: relative;
+  height: 90vw;
+  width: 90vw;
+  max-height: 500px;
+  max-width: 500px;
+  background-color: #4C566A;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #4C566A;
+}
+
+.line {
+  position: absolute;
+  background-color: #D8DEE9;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #D8DEE9;
+}
+
+.vertical-line {
+  height: 2%;
+  width: 90%;
+}
+
+.horizontal-line {
+  height: 90%;
+  width: 2%;
+}
+
+.vertical-1 {
+  left: 5%;
+  top: 33%;
+}
+
+.vertical-2 {
+  left: 5%;
+  bottom: 33%;
+}
+
+.horizontal-1 {
+  left: 33%;
+  top: 5%;
+}
+
+.horizontal-2 {
+  right: 33%;
+  top: 5%;
+}
