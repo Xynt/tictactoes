@@ -45,3 +45,22 @@
   right: 33%;
   top: 5%;
 }
+
+.clickable-grid-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
+  align-content: stretch;
+  height: 100%;
+  width: 100%;
+}
+
+.clickable-box {
+  flex: 1 1 30%;
+  cursor: pointer;
+}
+
+.clickable-box:hover {
+  background-color: rgba(216, 222, 233, 20%);
+}
