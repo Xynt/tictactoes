@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Player} from "./player";
+import {WinType} from "./win-type";
 
 @Component({
   selector: 'app-game-field',
@@ -21,15 +22,25 @@ export class GameFieldComponent implements OnInit {
   ]
 
   public currentTurn: Player = Player.ONE;
+  public winner: Player = Player.NONE;
+  public winType: WinType = WinType.NONE;
+
+  public Player = Player;
   constructor() { }
 
   ngOnInit(): void {
   }
 
   clickedBox(i: number): void {
-    if (this.fields[i] === Player.NONE) {
+    if (this.fields[i] === Player.NONE && this.winner === Player.NONE) {
       this.fields[i] = this.currentTurn;
-      this.toggleTurn();
+      let hasWon = WinType.hasWon(this.fields);
+      if (hasWon.type === WinType.NONE) {
+        this.toggleTurn();
+      } else {
+        this.winner = hasWon.player;
+        this.winType = hasWon.type;
+      }
     }
   }
 

@@ -15,7 +15,7 @@
           <path d="M12 21a9 9 0 1 1 9-9 9.01 9.01 0 0 1-9 9zm0-16a7 7 0 1 0 7 7 7.008 7.008 0 0 0-7-7z"/>
         </svg>
       </div>
-      <div *ngIf="isEmpty(i)" class="empty-box">
+      <div *ngIf="isEmpty(i)" class="empty-box" [ngClass]="winner === Player.NONE ? 'active-box' : ''">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <!-- just an empty svg so flexbox formatting doesnt break im at my limit i cant find any other solution dont kill me please thanks -->
         </svg>
@@ -23,3 +23,6 @@
     </div>
   </div>
 </div>
+
+<span *ngIf="winner === Player.ONE">X Won!</span>
+<span *ngIf="winner === Player.TWO">O Won!</span>
