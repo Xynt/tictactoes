@@ -49,18 +49,38 @@
 .clickable-grid-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   align-items: stretch;
-  align-content: stretch;
   height: 100%;
   width: 100%;
 }
 
 .clickable-box {
-  flex: 1 1 30%;
-  cursor: pointer;
+  flex: 1 0 30%;
+  max-height: 33%;
 }
 
-.clickable-box:hover {
-  background-color: rgba(216, 222, 233, 20%);
+.empty-box {
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+}
+
+.empty-box:hover {
+  background-color: rgba(216, 222, 233, 10%);
+}
+
+.x-svg {
+  padding: 5%;
+  height: 90%;
+  width: 90%;
+  fill: #81A1C1;
+  filter: drop-shadow(0 0 5px #81A1C1);
+}
+
+.o-svg {
+  padding: 10%;
+  height: 80%;
+  width: 80%;
+  fill: #D08770;
+  filter: drop-shadow(0 0 5px #D08770);
 }

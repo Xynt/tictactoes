@@ -4,6 +4,22 @@
   <div class="line vertical-line vertical-1"></div>
   <div class="line vertical-line vertical-2"></div>
   <div class="clickable-grid-container">
-    <div class="clickable-box" *ngFor="let f of fields; index as i"></div>
+    <div class="clickable-box" *ngFor="let f of fields; index as i" (click)="clickedBox(i)">
+      <div *ngIf="isX(i)">
+        <svg class="x-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M13.414 12l4.95-4.95a1 1 0 0 0-1.414-1.414L12 10.586l-4.95-4.95A1 1 0 0 0 5.636 7.05l4.95 4.95-4.95 4.95a1 1 0 0 0 1.414 1.414l4.95-4.95 4.95 4.95a1 1 0 0 0 1.414-1.414z"/>
+        </svg>
+      </div>
+      <div *ngIf="isO(i)">
+        <svg class="o-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 21a9 9 0 1 1 9-9 9.01 9.01 0 0 1-9 9zm0-16a7 7 0 1 0 7 7 7.008 7.008 0 0 0-7-7z"/>
+        </svg>
+      </div>
+      <div *ngIf="isEmpty(i)" class="empty-box">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <!-- just an empty svg so flexbox formatting doesnt break im at my limit i cant find any other solution dont kill me please thanks -->
+        </svg>
+      </div>
+    </div>
   </div>
 </div>
