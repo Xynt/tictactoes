@@ -1,4 +1,5 @@
 <div class="game-container">
-  <app-game-field></app-game-field>
-  <app-chat></app-chat>
+  <app-initial-screen *ngIf="!gameCode"></app-initial-screen>
+  <app-game-field *ngIf="gameCode"></app-game-field>
+  <app-chat *ngIf="gameCode"></app-chat>
 </div>
