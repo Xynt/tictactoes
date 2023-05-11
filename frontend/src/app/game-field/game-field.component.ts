@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Player} from "./player";
 import {WinType} from "./win-type";
+import {WebsocketService} from "../services/websocket.service";
 
 @Component({
   selector: 'app-game-field',
@@ -26,9 +27,10 @@ export class GameFieldComponent implements OnInit {
   public winType: WinType = WinType.NONE;
 
   public Player = Player;
-  constructor() { }
+  constructor(private ws: WebsocketService) { }
 
   ngOnInit(): void {
+    this.ws._connect();
   }
 
   clickedBox(i: number): void {
