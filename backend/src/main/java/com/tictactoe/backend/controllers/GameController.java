@@ -12,9 +12,7 @@ public class GameController {
 
     @MessageMapping("update")
     @SendTo("/topic/gameupdates")
-    public GameUpdate update(GameMessage message) throws InterruptedException {
-        System.out.println("something just came in");
-        Thread.sleep(1000); // simulated delay
-        return new GameUpdate("Hello, " + HtmlUtils.htmlEscape(message.getMessage()) + "!");
+    public GameUpdate update(GameMessage message) {
+        return new GameUpdate("Hello BITSCH, " + HtmlUtils.htmlEscape(message.getMessage()) + "!");
     }
 }

@@ -1,5 +1,5 @@
 <div class="game-container">
-  <app-initial-screen *ngIf="!gameCode"></app-initial-screen>
+  <app-initial-screen (createdEmitter)="createdGame($event)" *ngIf="!gameCode"></app-initial-screen>
   <app-game-field *ngIf="gameCode"></app-game-field>
   <app-chat *ngIf="gameCode"></app-chat>
 </div>

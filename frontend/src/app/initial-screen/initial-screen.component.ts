@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-initial-screen',
@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./initial-screen.component.css']
 })
 export class InitialScreenComponent implements OnInit {
+  @Output() createdEmitter: EventEmitter<string> = new EventEmitter<string>();
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  createLobby() {
+    this.createdEmitter.next("AAAAAA");
+  }
 }

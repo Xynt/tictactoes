@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   public gameCode: string = "";
+
+  createdGame($event: string) {
+    this.gameCode = $event;
+  }
 }
